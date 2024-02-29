@@ -1,9 +1,7 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class AllocatedObject {
-    String s;
+    public int[] a;
     public AllocatedObject() {
-        s = "hello";
+        this.a = new int[1000000];
     }
+
 }
