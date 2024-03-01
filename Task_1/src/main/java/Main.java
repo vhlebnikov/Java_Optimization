@@ -7,10 +7,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        long usedMemory = 0, objectSize;
+        long usedMemory = 0, objectSize, maxMemory, freeMemory, totalMemory;
 
-//        List<AllocatedObject> list = new ArrayList<>();
-        List<AllocatedObject> list = new ArrayList<>(20000);
+        var list = new ArrayList<AllocatedObject>(20000);
+        var i = 1;
         Path path = Path.of("src/main/resources/data.csv");
 
         if (!Files.exists(path)) {
@@ -18,25 +18,28 @@ public class Main {
         }
 
         FileWriter fileWriter = new FileWriter(String.valueOf(path), false);
-        fileWriter.append("Max, Total, Free, Used (total-free), Object\n");
+        fileWriter.append("i,Max,Total,Free,Used (total-free),Object\n");
 
         try {
             while (true) {
+                var v = new AllocatedObject();
+                list.add(v);
 
-                list.add(new AllocatedObject());
-
-                long maxMemory = Runtime.getRuntime().maxMemory();
-                long totalMemory = Runtime.getRuntime().totalMemory();
-                long freeMemory = Runtime.getRuntime().freeMemory();
+                maxMemory = Runtime.getRuntime().maxMemory();
+                totalMemory = Runtime.getRuntime().totalMemory();
+                freeMemory = Runtime.getRuntime().freeMemory();
 
                 objectSize = totalMemory - freeMemory - usedMemory;
                 usedMemory = totalMemory - freeMemory;
 
-                fileWriter.append(String.valueOf(maxMemory)).append(", ");
-                fileWriter.append(String.valueOf(totalMemory)).append(", ");
-                fileWriter.append(String.valueOf(freeMemory)).append(", ");
-                fileWriter.append(String.valueOf(usedMemory)).append(", ");
-                fileWriter.append(String.valueOf(objectSize)).append("\n");
+                if (usedMemory != objectSize && objectSize != 0) {
+                    fileWriter.append(String.valueOf(i++)).append(",");
+                    fileWriter.append(String.valueOf(maxMemory)).append(",");
+                    fileWriter.append(String.valueOf(totalMemory)).append(",");
+                    fileWriter.append(String.valueOf(freeMemory)).append(",");
+                    fileWriter.append(String.valueOf(usedMemory)).append(",");
+                    fileWriter.append(String.valueOf(objectSize)).append("\n");
+                }
             }
         } catch (Exception e) {
             fileWriter.flush();

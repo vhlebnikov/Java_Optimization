@@ -1,7 +1,7 @@
 public class AllocatedObject {
-    public int[] a;
-    public AllocatedObject() {
-        this.a = new int[1000000];
-    }
+    public int[] a = new int[10000];
+    // 8 bytes - link to array
+    // 8 bytes - link to class
+    // 40000 - bytes for array
 
 }
