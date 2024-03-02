@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +28,8 @@ public class Main {
                 try {
                     Thread.sleep(Long.MAX_VALUE);
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                    System.err.println(Thread.currentThread().threadId() + " has been stopped");
+                    return;
                 }
             }
         };
@@ -33,13 +37,19 @@ public class Main {
         Runnable harmfulTask = () -> {
             List<Object> list = new ArrayList<>();
             while (true) {
-                list.add(new ArrayList<>(1000000));
+                list.add(new ArrayList<>(100000));
             }
         };
 
+        List<Thread> threads = new ArrayList<>();
+
         for (int i = 0; i < 10; i++) {
-            (new Thread(simpleTask)).start();
+            Thread thread = new Thread(simpleTask);
+            threads.add(thread);
+            thread.start();
+
         }
+
 
         if (args.length > 0) {
             (new Thread(harmfulTask)).start();
