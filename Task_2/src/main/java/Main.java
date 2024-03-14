@@ -5,23 +5,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         List<Bean> beans = new ArrayList<>();
         int beansSize = 10;
-        for (int i = 0; i < beansSize + 1; i++) {
-            Bean bean;
-            if (i != beansSize) {
-                bean = new Bean();
-                beans.add(bean);
-                if (i != 0) {
-                    bean.setLinkOn(beans.get((i - 1) % beansSize));
-                }
-            } else {
-                beans.get(0).setLinkOn(beans.get(beansSize - 1));
-            }
+        beans.add(new Bean());
+        for (int i = 1; i < beansSize; i++) {
+            Bean bean = new Bean();
+            beans.add(bean);
+            bean.setLinkOn(beans.get(i - 1));
         }
+        beans.get(0).setLinkOn(beans.get(beansSize - 1));
 
-        Runnable simpleTask = () -> {
+        Runnable sleepingTask = () -> {
             Singleton singleton = Singleton.getInstance();
             Bean bean = new Bean();
             while (true) {
@@ -41,18 +36,20 @@ public class Main {
             }
         };
 
-        List<Thread> threads = new ArrayList<>();
-
         for (int i = 0; i < 10; i++) {
-            Thread thread = new Thread(simpleTask);
-            threads.add(thread);
-            thread.start();
-
+            (new Thread(sleepingTask)).start();
         }
-
 
         if (args.length > 0) {
             (new Thread(harmfulTask)).start();
         }
+//        while (true) {
+//            try {
+//                Thread.sleep(Long.MAX_VALUE);
+//            } catch (InterruptedException e) {
+//                System.err.println(Thread.currentThread().threadId() + " has been stopped");
+//                return;
+//            }
+//        }
     }
 }
