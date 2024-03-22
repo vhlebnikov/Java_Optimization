@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-long matrix[1024][1024];
-long result[1024][1024];
+int matrix[1024][1024];
+int result[1024][1024];
 
 int main() {
     int dimensions[2] = {128, 1024};

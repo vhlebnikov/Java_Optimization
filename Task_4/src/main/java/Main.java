@@ -21,8 +21,8 @@ public class Main {
         String exePath = "app.exe";
 
 
-        Runtime.getRuntime().exec(String.format("cmd /c gcc %s -o %s", cCodePath, exePath));
-        Thread.sleep(2000);
+        Runtime.getRuntime().exec(String.format("cmd /c gcc %s -o %s -O3", cCodePath, exePath));
+        Thread.sleep(3000);
 
         Process process = Runtime.getRuntime().exec("./" + exePath);
 

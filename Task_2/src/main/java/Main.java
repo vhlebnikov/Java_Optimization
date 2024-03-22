@@ -1,11 +1,8 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         List<Bean> beans = new ArrayList<>();
         int beansSize = 10;
         beans.add(new Bean());
@@ -43,13 +40,14 @@ public class Main {
         if (args.length > 0) {
             (new Thread(harmfulTask)).start();
         }
-//        while (true) {
-//            try {
-//                Thread.sleep(Long.MAX_VALUE);
-//            } catch (InterruptedException e) {
-//                System.err.println(Thread.currentThread().threadId() + " has been stopped");
-//                return;
-//            }
-//        }
+
+        while (true) {
+            try {
+                Thread.sleep(Long.MAX_VALUE);
+            } catch (InterruptedException e) {
+                System.err.println(Thread.currentThread().threadId() + " has been stopped");
+                return;
+            }
+        }
     }
 }
