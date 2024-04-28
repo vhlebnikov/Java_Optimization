@@ -1,0 +1,186 @@
+Classfile /D:/Учёба/3 курс/Java_Optimization/Task_5/src/main/java/Main.class
+  Last modified 29 апр. 2024 г.; size 1502 bytes
+  SHA-256 checksum fb45fbd1b321282ef96e103d18b3dd0b2b4f27a13820ce5d1f76e721f883735f
+  Compiled from "Main.java"
+public class Main
+  minor version: 0
+  major version: 63
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #67                         // Main
+  super_class: #2                         // java/lang/Object
+  interfaces: 0, fields: 0, methods: 2, attributes: 3
+Constant pool:
+   #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+   #2 = Class              #4             // java/lang/Object
+   #3 = NameAndType        #5:#6          // "<init>":()V
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = Class              #8             // java/util/ArrayList
+   #8 = Utf8               java/util/ArrayList
+   #9 = Methodref          #7.#3          // java/util/ArrayList."<init>":()V
+  #10 = Class              #11            // ValueClass
+  #11 = Utf8               ValueClass
+  #12 = InterfaceMethodref #13.#14        // java/util/random/RandomGenerator.getDefault:()Ljava/util/random/RandomGenerator;
+  #13 = Class              #15            // java/util/random/RandomGenerator
+  #14 = NameAndType        #16:#17        // getDefault:()Ljava/util/random/RandomGenerator;
+  #15 = Utf8               java/util/random/RandomGenerator
+  #16 = Utf8               getDefault
+  #17 = Utf8               ()Ljava/util/random/RandomGenerator;
+  #18 = Methodref          #19.#20        // java/util/Random.from:(Ljava/util/random/RandomGenerator;)Ljava/util/Random;
+  #19 = Class              #21            // java/util/Random
+  #20 = NameAndType        #22:#23        // from:(Ljava/util/random/RandomGenerator;)Ljava/util/Random;
+  #21 = Utf8               java/util/Random
+  #22 = Utf8               from
+  #23 = Utf8               (Ljava/util/random/RandomGenerator;)Ljava/util/Random;
+  #24 = Methodref          #19.#25        // java/util/Random.nextInt:()I
+  #25 = NameAndType        #26:#27        // nextInt:()I
+  #26 = Utf8               nextInt
+  #27 = Utf8               ()I
+  #28 = Methodref          #10.#29        // ValueClass."<init>":(I)V
+  #29 = NameAndType        #5:#30         // "<init>":(I)V
+  #30 = Utf8               (I)V
+  #31 = InterfaceMethodref #32.#33        // java/util/List.add:(Ljava/lang/Object;)Z
+  #32 = Class              #34            // java/util/List
+  #33 = NameAndType        #35:#36        // add:(Ljava/lang/Object;)Z
+  #34 = Utf8               java/util/List
+  #35 = Utf8               add
+  #36 = Utf8               (Ljava/lang/Object;)Z
+  #37 = Methodref          #10.#38        // ValueClass.sort:(Ljava/util/List;)V
+  #38 = NameAndType        #39:#40        // sort:(Ljava/util/List;)V
+  #39 = Utf8               sort
+  #40 = Utf8               (Ljava/util/List;)V
+  #41 = Fieldref           #42.#43        // java/lang/System.out:Ljava/io/PrintStream;
+  #42 = Class              #44            // java/lang/System
+  #43 = NameAndType        #45:#46        // out:Ljava/io/PrintStream;
+  #44 = Utf8               java/lang/System
+  #45 = Utf8               out
+  #46 = Utf8               Ljava/io/PrintStream;
+  #47 = InterfaceMethodref #32.#48        // java/util/List.get:(I)Ljava/lang/Object;
+  #48 = NameAndType        #49:#50        // get:(I)Ljava/lang/Object;
+  #49 = Utf8               get
+  #50 = Utf8               (I)Ljava/lang/Object;
+  #51 = Methodref          #52.#53        // java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+  #52 = Class              #54            // java/lang/String
+  #53 = NameAndType        #55:#56        // valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+  #54 = Utf8               java/lang/String
+  #55 = Utf8               valueOf
+  #56 = Utf8               (Ljava/lang/Object;)Ljava/lang/String;
+  #57 = InvokeDynamic      #0:#58         // #0:makeConcatWithConstants:(ILjava/lang/String;)Ljava/lang/String;
+  #58 = NameAndType        #59:#60        // makeConcatWithConstants:(ILjava/lang/String;)Ljava/lang/String;
+  #59 = Utf8               makeConcatWithConstants
+  #60 = Utf8               (ILjava/lang/String;)Ljava/lang/String;
+  #61 = Methodref          #62.#63        // java/io/PrintStream.println:(Ljava/lang/String;)V
+  #62 = Class              #64            // java/io/PrintStream
+  #63 = NameAndType        #65:#66        // println:(Ljava/lang/String;)V
+  #64 = Utf8               java/io/PrintStream
+  #65 = Utf8               println
+  #66 = Utf8               (Ljava/lang/String;)V
+  #67 = Class              #68            // Main
+  #68 = Utf8               Main
+  #69 = Utf8               Code
+  #70 = Utf8               LineNumberTable
+  #71 = Utf8               main
+  #72 = Utf8               ([Ljava/lang/String;)V
+  #73 = Utf8               StackMapTable
+  #74 = Utf8               SourceFile
+  #75 = Utf8               Main.java
+  #76 = Utf8               BootstrapMethods
+  #77 = MethodHandle       6:#78          // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #78 = Methodref          #79.#80        // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #79 = Class              #81            // java/lang/invoke/StringConcatFactory
+  #80 = NameAndType        #59:#82        // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #81 = Utf8               java/lang/invoke/StringConcatFactory
+  #82 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #83 = String             #84            // i: \u0001 \u0001
+  #84 = Utf8               i: \u0001 \u0001
+  #85 = Utf8               InnerClasses
+  #86 = Class              #87            // java/lang/invoke/MethodHandles$Lookup
+  #87 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #88 = Class              #89            // java/lang/invoke/MethodHandles
+  #89 = Utf8               java/lang/invoke/MethodHandles
+  #90 = Utf8               Lookup
+{
+  public Main();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 6: 0
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=4, locals=3, args_size=1
+         0: new           #7                  // class java/util/ArrayList
+         3: dup
+         4: invokespecial #9                  // Method java/util/ArrayList."<init>":()V
+         7: astore_1
+         8: iconst_0
+         9: istore_2
+        10: iload_2
+        11: bipush        20
+        13: if_icmpge     45
+        16: aload_1
+        17: new           #10                 // class ValueClass
+        20: dup
+        21: invokestatic  #12                 // InterfaceMethod java/util/random/RandomGenerator.getDefault:()Ljava/util/random/RandomGenerator;
+        24: invokestatic  #18                 // Method java/util/Random.from:(Ljava/util/random/RandomGenerator;)Ljava/util/Random;
+        27: invokevirtual #24                 // Method java/util/Random.nextInt:()I
+        30: invokespecial #28                 // Method ValueClass."<init>":(I)V
+        33: invokeinterface #31,  2           // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+        38: pop
+        39: iinc          2, 1
+        42: goto          10
+        45: aload_1
+        46: invokestatic  #37                 // Method ValueClass.sort:(Ljava/util/List;)V
+        49: iconst_0
+        50: istore_2
+        51: iload_2
+        52: bipush        20
+        54: if_icmpge     85
+        57: getstatic     #41                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        60: iload_2
+        61: aload_1
+        62: iload_2
+        63: invokeinterface #47,  2           // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+        68: invokestatic  #51                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+        71: invokedynamic #57,  0             // InvokeDynamic #0:makeConcatWithConstants:(ILjava/lang/String;)Ljava/lang/String;
+        76: invokevirtual #61                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+        79: iinc          2, 1
+        82: goto          51
+        85: return
+      LineNumberTable:
+        line 22: 0
+        line 23: 8
+        line 24: 16
+        line 23: 39
+        line 26: 45
+        line 27: 49
+        line 28: 57
+        line 27: 79
+        line 30: 85
+      StackMapTable: number_of_entries = 4
+        frame_type = 253 /* append */
+          offset_delta = 10
+          locals = [ class java/util/List, int ]
+        frame_type = 250 /* chop */
+          offset_delta = 34
+        frame_type = 252 /* append */
+          offset_delta = 5
+          locals = [ int ]
+        frame_type = 250 /* chop */
+          offset_delta = 33
+}
+SourceFile: "Main.java"
+BootstrapMethods:
+  0: #77 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #83 i: \u0001 \u0001
+InnerClasses:
+  public static final #90= #86 of #88;    // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles

@@ -1,0 +1,65 @@
+Compiled from "Functions.java"
+public class Functions {
+  public Functions();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static int getLength(java.lang.String);
+    Code:
+       0: aload_0
+       1: invokevirtual #7                  // Method java/lang/String.length:()I
+       4: ireturn
+
+  public static java.lang.Object callMethod(java.lang.Object, java.lang.String);
+    Code:
+       0: aload_0
+       1: invokevirtual #13                 // Method java/lang/Object.getClass:()Ljava/lang/Class;
+       4: aload_1
+       5: iconst_0
+       6: anewarray     #17                 // class java/lang/Class
+       9: invokevirtual #19                 // Method java/lang/Class.getMethod:(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+      12: astore_2
+      13: aload_2
+      14: aload_0
+      15: iconst_0
+      16: anewarray     #2                  // class java/lang/Object
+      19: invokevirtual #23                 // Method java/lang/reflect/Method.invoke:(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+      22: areturn
+      23: astore_2
+      24: getstatic     #31                 // Field java/lang/System.err:Ljava/io/PrintStream;
+      27: ldc           #37                 // String Can\'t invoke method
+      29: invokevirtual #39                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      32: aconst_null
+      33: areturn
+    Exception table:
+       from    to  target type
+           0    22    23   Class java/lang/Exception
+
+  public static void changeField(java.lang.Object, java.lang.String, java.lang.Object);
+    Code:
+       0: aload_0
+       1: invokevirtual #13                 // Method java/lang/Object.getClass:()Ljava/lang/Class;
+       4: aload_1
+       5: invokevirtual #45                 // Method java/lang/Class.getField:(Ljava/lang/String;)Ljava/lang/reflect/Field;
+       8: astore_3
+       9: aload_3
+      10: iconst_1
+      11: invokevirtual #49                 // Method java/lang/reflect/Field.setAccessible:(Z)V
+      14: aload_3
+      15: aload_0
+      16: aload_2
+      17: invokevirtual #55                 // Method java/lang/reflect/Field.set:(Ljava/lang/Object;Ljava/lang/Object;)V
+      20: goto          39
+      23: astore_3
+      24: getstatic     #31                 // Field java/lang/System.err:Ljava/io/PrintStream;
+      27: aload_3
+      28: invokestatic  #59                 // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+      31: invokedynamic #63,  0             // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+      36: invokevirtual #39                 // Method java/io/PrintStream.println:(Ljava/lang/String;)V
+      39: return
+    Exception table:
+       from    to  target type
+           0    20    23   Class java/lang/Exception
+}
