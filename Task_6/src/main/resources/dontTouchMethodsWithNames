@@ -1,14 +1,14 @@
--injars 'D:\Учёба\3 курс\Java_Optimization\Task_6\a.jar'
--outjars 'D:\Учёба\3 курс\Java_Optimization\Task_6\a_out.jar'
+-injars 'C:\Study\3_course\Java_Optimization\Task_6\a.jar'
+-outjars 'C:\Study\3_course\Java_Optimization\Task_6\a_out_dt_methods_names.jar'
 
 -libraryjars 'C:\Program Files\Java\jdk-19\jmods\java.base.jmod'
 
--dontskipnonpubliclibraryclassmembers
+-dontshrink
 -dontoptimize
 -dontobfuscate
 -dontusemixedcaseclassnames
 -dontpreverify
--dontnote
+
 -dontwarn
 
 
