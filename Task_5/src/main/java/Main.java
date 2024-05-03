@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.random.RandomGenerator;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,8 +19,9 @@ public class Main {
 //            System.out.println("Res: " + (int) res);
 //        }
         List<ValueClass> valueClassList = new ArrayList<>();
+        Random random = new Random();
         for (int i = 0; i < 20; i++) {
-            valueClassList.add(new ValueClass(Random.from(RandomGenerator.getDefault()).nextInt()));
+            valueClassList.add(new ValueClass(random.nextInt()));
         }
         ValueClass.sort(valueClassList);
         for (int i = 0; i < 20; i++) {
